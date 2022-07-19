@@ -28,7 +28,7 @@ router.get('/comments', async (req, res) => {
 
 router.get('/comments/:id', withAuth, async (req,res) => {
     try{
-        const commentData = await comment.findbyPk(req.params.id);
+        const commentData = await Comment.findbyPk(req.params.id);
 
         const comment = commentData.get({plain:true});
 
